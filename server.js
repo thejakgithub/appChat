@@ -6,7 +6,7 @@ var path = require('path');
 users = [];
 connections = [];
 
-server.listen(3000,function(){
+server.listen(process.env.PORT || 3000,function(){
 	console.log('Server Running...');
 });
 	
