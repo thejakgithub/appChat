@@ -8,7 +8,7 @@ users = [];
 connections = [];
 
 server.listen(port,function(){
-	console.log('Server Running...');
+	console.log('Server Running... port:'+port);
 });
 	
 app.set('view engine','ejs');
