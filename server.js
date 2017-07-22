@@ -3,6 +3,10 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var path = require('path');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
 users = [];
 connections = [];
@@ -20,7 +24,7 @@ app.get('/',function(req,res){
 	res.render('index.ejs');
 });
 
-io.sockets.on('connection',function(socket){
+io.on('connection',function(socket){
 	connections.push(socket);
 	console.log('Connected: %s socket Connected', connections.length);
 	//Disconnect

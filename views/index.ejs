@@ -8,19 +8,52 @@
   <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-  <div class="container">
+  <div class="container-full">
+
       <div id="userFormArea" class="row">
-        <div class="col-md-12">
+       <div class ="col-md-4">Picture</div>
+        <div class="col-md-4">
+          
+        </div>
+        <div class ="col-md-4">
            <form id="userForm">
            <div class="form-group">
-             <label>Enter username</label>
-             <input class="form-control" id="username"></input>
+             <label>username</label>
+             <input class="form-control" id="username" ></input>
+             <label>Password</label>
+             <input class="form-control" id="password" type="password" ></input>
              <br/>
              <input type="submit" class="btn btn-primary" value="Login">
             </div>
           </form>
+
         </div>
       </div>
+
+      <div id="register" class="row">
+      <div class ="col-md-8">pic</div>
+      <div class="col-md-4">
+        <form method="post" action="/users/register">
+        <h1>Register</h1>
+        <br/>
+   <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="name">
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" placeholder="Username" name="username">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password">
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+      </div>
+      </div>
+
 
      <div id="messageArea" class="row">
         <div class="col-md-4">
@@ -35,7 +68,7 @@
           <form id="messageForm">
            <div class="form-group">
              <label>Enter Message</label>
-             <textarea class="form-control" id="message"></textarea>
+             <input type="text" class="form-control" id="message"></input>
              <br/>
              <input type="submit" class="btn btn-primary" value="Send Message"></div>
           </form>
@@ -55,6 +88,7 @@
           var $userForm = $('#userForm');
           var $users = $('#users');
           var $username = $('#username');
+          var $register = $('#register');
         
           
          
@@ -75,7 +109,9 @@
               
               if(data){
                 $userFormArea.hide();
+                $register.hide();
                 $messageArea.show();
+
                  }
             });
             $username.val('');
