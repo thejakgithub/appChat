@@ -3,12 +3,7 @@ body{
 	padding: 0px;
 	
 }
-#messageArea{
-	display: none;
-	padding-top: 60px;
-	padding-left: 10%;
-	padding-right: 10%;
-}
+
 #userFormArea{
 padding-top: 2%;
 padding-right: 17%;
@@ -19,8 +14,21 @@ border-bottom: solid;
 border-bottom-color: #003399;
 }
 #register{
-	padding-top: 5px;
+	padding-top: 1%;
 padding-right: 17%;
 padding-left: 15%;
 color: black;
+}
+#messageArea{
+	display: none;
+	padding-top: 60px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+#logout{
+	display:none;
+	float: right;
+	padding-top: 10px;
+	padding-right :10%;
+	
 }

@@ -31,9 +31,9 @@
       </div>
 
       <div id="register" class="row">
-      <div class ="col-md-8">pic</div>
+      <div class ="col-md-8">picdsjfkj<br>asdfsadffasd</div>
       <div class="col-md-4">
-        <form method="post" action="/users/register">
+        <form method="post" action="chatroom">
         <h1>Register</h1>
         <br/>
    <div class="form-group">
@@ -48,22 +48,34 @@
     <label>Password</label>
     <input type="password" class="form-control" placeholder="Password" name="password">
   </div>
+ 
   <button type="submit" class="btn btn-success">Submit</button>
 </form>
 
       </div>
       </div>
 
-
+          <div id="logout"><form  method="post" action="logout">
+            <input type="submit" class="btn btn-danger" value="Logout">
+          
+          </form></div>
+          
      <div id="messageArea" class="row">
+
+          
+
         <div class="col-md-4">
           <div class="well">
             <h3>Online Users</h3>
             <ul class="list-group" id="users"></ul>
           </div>
+        
+          
        </div>
        <div class="col-md-8">
           <div class="chat" id="chat"></div>
+
+
 
           <form id="messageForm">
            <div class="form-group">
@@ -89,6 +101,7 @@
           var $users = $('#users');
           var $username = $('#username');
           var $register = $('#register');
+          var $logout = $('#logout');
         
           
          
@@ -106,11 +119,12 @@
            $userForm.submit(function(e){
             e.preventDefault();
             socket.emit('new user', $username.val(),function(data){
-              
+               
               if(data){
                 $userFormArea.hide();
                 $register.hide();
                 $messageArea.show();
+                $logout.show();
 
                  }
             });

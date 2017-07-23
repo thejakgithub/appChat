@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
+
+var routes = require('./routes/index.routes');
 users = [];
 connections = [];
 
@@ -20,9 +22,10 @@ app.set('views',path.resolve(__dirname,'views'));
 
 app.use(express.static(path.resolve(__dirname)));
 
-app.get('/',function(req,res){
-	res.render('index.ejs');
-});
+app.use('/',routes);
+
+
+
 
 io.on('connection',function(socket){
 	connections.push(socket);

@@ -16,6 +16,13 @@
     "socket.io": "^2.0.3",
     "body-parser": "*",
     "mongodb": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "bcryptjs": "*",
+ "connect-flash": "*",
+ "express-messages": "*",
+"passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "express-validator": "*"
   }
 }
